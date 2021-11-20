@@ -1,6 +1,9 @@
 from tkinter import *
 import homePage as hpg
+import registerVoter as regV
+import admFunc as adFunc
 from homePage import *
+from registerVoter import *
 
 
 def AdminHome(root,frame1,frame3):
@@ -13,9 +16,9 @@ def AdminHome(root,frame1,frame3):
     
     runServer = Button(frame1, text="Run Server", width=15)
 
-    registerVoter = Button(frame1, text="Register Voter", width=15)
+    registerVoter = Button(frame1, text="Register Voter", width=15,command = lambda: regV.Register(root, frame1))
 
-    showVotes = Button(frame1, text="Total vote count", width=15)
+    showVotes = Button(frame1, text="Total vote count", width=15, command = lambda: adFunc.showVotes(root, frame1))
 
     
     Label(frame1, text="").grid(row = 2,column = 0)
